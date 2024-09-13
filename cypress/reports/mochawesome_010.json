@@ -1,0 +1,166 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-13T15:58:48.221Z",
+    "end": "2024-09-13T15:59:14.103Z",
+    "duration": 25882,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6b2f4666-f07e-4329-a3d8-0517db718375",
+      "title": "",
+      "fullFile": "cypress\\integration\\homepage.cy.js",
+      "file": "cypress\\integration\\homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3d475fc4-4d76-4a6b-8b4d-1ccbc1e028d3",
+          "title": "Homepage Element Visibility Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should load the homepage and verify that key elements are visible",
+              "fullTitle": "Homepage Element Visibility Verification should load the homepage and verify that key elements are visible",
+              "timedOut": null,
+              "duration": 7443,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store homepage\ncy.visit('https://automationteststore.com/');\n// Verify that the homepage URL is correct\ncy.url().should('eq', 'https://automationteststore.com/');\n// Check that the logo image with title 'Automation Test Store' is visible\ncy.xpath(\"//img[@title='Automation Test Store']\").should('be.visible');\n// Verify the 'Home' menu link with the class 'active menu_home' is visible\ncy.xpath(\"//a[@class='active menu_home']\").should('be.visible');\n// Check that the block frame with ID 'block_frame_html_block_1775' is visible\ncy.get(\"div[id='block_frame_html_block_1775']\").should('be.visible');\n// Verify that the 'menu_text' div is visible\ncy.get('div.btn-group.search-bar').should('be.visible');\ncy.get('input#filter_keyword').should('be.visible');\ncy.get('div.button-in-search').should('be.visible');\n// Trigger the dropdown if needed\ncy.get('input#filter_keyword').click();\ncy.get('ul#search-category').should('be.visible');\ncy.xpath(\"//h4[contains(text(),'Welcome to the Automation Test Store!')]\").should('be.visible').and('contain.text', 'Welcome to the Automation Test Store!');\n// Verify that the block frame with ID 'block_frame_html_block_1776' is visible\ncy.get(\"div[id='block_frame_html_block_1776']\").should('be.visible');\n// Check that the h2 element inside the block frame contains the expected text\ncy.get(\"div[id='block_frame_html_block_1776'] h2\").should('be.visible').and('contain.text', 'Contact Us');",
+              "err": {},
+              "uuid": "a0f48d47-77a5-4e33-aec2-6291a3ab7f8c",
+              "parentUUID": "3d475fc4-4d76-4a6b-8b4d-1ccbc1e028d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display the social media icons",
+              "fullTitle": "Homepage Element Visibility Verification should display the social media icons",
+              "timedOut": null,
+              "duration": 1906,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://automationteststore.com/');\ncy.get('a.facebook').should('be.visible');\ncy.get('a.twitter').should('be.visible');\ncy.get('a.linkedin').should('be.visible');",
+              "err": {},
+              "uuid": "0b99411a-3d16-46bc-84c2-ac2b4a787687",
+              "parentUUID": "3d475fc4-4d76-4a6b-8b4d-1ccbc1e028d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display the category links",
+              "fullTitle": "Homepage Element Visibility Verification should display the category links",
+              "timedOut": null,
+              "duration": 3403,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://automationteststore.com/');\ncy.get('a[href=\"https://automationteststore.com/index.php?rt=product/category&path=68\"]').should('be.visible');\ncy.get('a[href=\"https://automationteststore.com/index.php?rt=product/category&path=36\"]').should('be.visible');\ncy.get('a[href=\"https://automationteststore.com/index.php?rt=product/category&path=43\"]').should('be.visible');\ncy.get('a[href=\"https://automationteststore.com/index.php?rt=product/category&path=49\"]').should('be.visible');",
+              "err": {},
+              "uuid": "869e63a9-55e8-4649-a10b-510a69b12a7d",
+              "parentUUID": "3d475fc4-4d76-4a6b-8b4d-1ccbc1e028d3",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should navigate to a category, verify elements, check images, and navigate back",
+              "fullTitle": "Homepage Element Visibility Verification should navigate to a category, verify elements, check images, and navigate back",
+              "timedOut": null,
+              "duration": 8987,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store homepage\ncy.visit('https://automationteststore.com/');\n// Click on a specific category (e.g., Apparel & Accessories)\ncy.get(\"a[href='https://automationteststore.com/index.php?rt=product/category&path=68']\").click();\n// Verify the 'Shoes' link is visible and click on it\ncy.xpath(\"//a[normalize-space()='Shoes']\").should('be.visible').click();\n// Verify that the first product image is visible on the Shoes page\ncy.xpath(\"//div[@class='contentpanel']//div[1]//div[2]//a[1]//img[1]\").should('be.visible');\n// Go back to the previous page\ncy.go('back');\n// Click on the second product (use the provided CSS selector)\ncy.get('body > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(2) > div:nth-child(2) > a:nth-child(1)').click();\n// Verify that the image on the new product page is visible\ncy.xpath(\"//div[@class='contentpanel']//div[1]//div[2]//a[1]//img[1]\").should('be.visible');",
+              "err": {},
+              "uuid": "c6c6c5d5-0c1d-44b8-ac52-4192d309b8e3",
+              "parentUUID": "3d475fc4-4d76-4a6b-8b4d-1ccbc1e028d3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a0f48d47-77a5-4e33-aec2-6291a3ab7f8c",
+            "0b99411a-3d16-46bc-84c2-ac2b4a787687",
+            "869e63a9-55e8-4649-a10b-510a69b12a7d",
+            "c6c6c5d5-0c1d-44b8-ac52-4192d309b8e3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21739,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

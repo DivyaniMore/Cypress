@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-13T15:58:26.835Z",
+    "end": "2024-09-13T15:58:44.964Z",
+    "duration": 18129,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ba4c10d9-d327-4649-87a1-550d04aa8e7e",
+      "title": "",
+      "fullFile": "cypress\\integration\\details.cy.js",
+      "file": "cypress\\integration\\details.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "34586f5c-959f-466f-a83b-645f8eb1160f",
+          "title": "Featured Product Image and Details Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should verify product image, details, and functionalities on the Skinsheen Bronzer Stick product page",
+              "fullTitle": "Featured Product Image and Details Verification should verify product image, details, and functionalities on the Skinsheen Bronzer Stick product page",
+              "timedOut": null,
+              "duration": 8968,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store homepage\ncy.visit('https://automationteststore.com/');\n// Check if the featured product image (first thumbnail) is visible\ncy.get(\"section[id='featured'] div[class='thumbnails list-inline'] div:nth-child(1) div:nth-child(2) a:nth-child(1) img:nth-child(1)\").should('be.visible') // Verify that the featured product image is visible\n.click(); // Click on the featured product image\n// Verify that the updated larger product image is visible\ncy.get(\"img[src='//automationteststore.com/image/thumbnails/18/6f/demo_product01_jpg-100089-380x380.jpg']\").should('be.visible'); // Ensure the larger version of the image is visible\n// Verify that the product name 'Skinsheen Bronzer Stick' is visible\ncy.get('span.bgnone').should('contain.text', 'Skinsheen Bronzer Stick');\n// Verify that the product price is visible\ncy.get('.productpageprice.jumbotron').should('contain.text', '$29.50');\n// Verify that the quantity input field is visible and has the default value of '1'\ncy.get('#product_quantity').should('be.visible').and('have.value', '1');\n// Verify that the \"Add to Cart\" button is visible\ncy.get('.cart').should('be.visible');",
+              "err": {},
+              "uuid": "46506472-e86d-4ba6-b663-7da5fe8c67fa",
+              "parentUUID": "34586f5c-959f-466f-a83b-645f8eb1160f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a product to the cart, select Cart from the dropdown, and verify the product image in the cart",
+              "fullTitle": "Featured Product Image and Details Verification should add a product to the cart, select Cart from the dropdown, and verify the product image in the cart",
+              "timedOut": null,
+              "duration": 5279,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store\ncy.visit('https://automationteststore.com/');\n// Verify that the product image is visible\ncy.get(\"img[src='//automationteststore.com/image/thumbnails/18/6b/demo_product02_3_jpg-100029-250x250.jpg'][width='250']\").should('be.visible');\n// Click on the cart button associated with the product\ncy.get(\"body > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > section:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div:nth-child(2) > div:nth-child(4) > a:nth-child(1) > i:nth-child(1)\").click();\n// Select \"Cart\" from the first dropdown\ncy.get('select.form-control').first().select('Cart');\n// Verify the exact URL redirection\ncy.url().should('eq', 'https://automationteststore.com/index.php?rt=checkout/cart');\n// Check if the product image in the cart is visible\ncy.get(\"img[src='//automationteststore.com/image/thumbnails/18/6b/demo_product02_3_jpg-100029-75x75.jpg'][width='75'][height='75']\").should('be.visible');",
+              "err": {},
+              "uuid": "c8756170-a316-4af9-850a-f1c272f2d27f",
+              "parentUUID": "34586f5c-959f-466f-a83b-645f8eb1160f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "46506472-e86d-4ba6-b663-7da5fe8c67fa",
+            "c8756170-a316-4af9-850a-f1c272f2d27f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14247,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

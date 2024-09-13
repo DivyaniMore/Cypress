@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-13T16:00:24.625Z",
+    "end": "2024-09-13T16:00:44.212Z",
+    "duration": 19587,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "502c442a-1eec-4c12-9578-740428f94231",
+      "title": "",
+      "fullFile": "cypress\\integration\\search.cy.js",
+      "file": "cypress\\integration\\search.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3694f87a-de75-4a75-9048-a7edcdae2cd8",
+          "title": "Search Functionality and Product Details Verification",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should search for \"makeup\", verify specific images, and check product details for \"makeup\"",
+              "fullTitle": "Search Functionality and Product Details Verification should search for \"makeup\", verify specific images, and check product details for \"makeup\"",
+              "timedOut": null,
+              "duration": 10568,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store homepage\ncy.visit('https://automationteststore.com/');\n// Search for \"makeup\" and verify the specific image is visible\ncy.get('input#filter_keyword').should('be.visible').type('makeup').type('{enter}'); // Press Enter to perform the search\n// Verify that the specific image for \"makeup\" is visible\ncy.get('img[src=\"//automationteststore.com/image/thumbnails/18/79/lancome_mascara_jpg-100250-250x250.jpg\"]').should('be.visible');\n// Click on the specific product link \"L'EXTRÊME Instant Extensions Lengthening Mascara\"\ncy.contains('a', \"L'EXTRÊME Instant Extensions Lengthening Mascara\").should('be.visible').click();\n// Verify the product image is visible on the product page\ncy.get('img[src=\"//automationteststore.com/image/thumbnails/18/79/lancome_mascara_jpg-100250-380x380.jpg\"]').should('be.visible');\n// Verify the price of the product is visible\ncy.get('div.productpageprice').should('contain.text', '$25.00');\n// Verify the product name is displayed on the product page\ncy.contains('span.bgnone', \"L'EXTRÊME Instant Extensions Lengthening Mascara\").should('be.visible');\n// Check the visibility of a dropdown menu and select an option\ncy.get('div[class=\"form-group\"] label[class=\"control-label\"]').should('be.visible'); // Verify label is visible\n// Select an option from the dropdown menu (e.g., #option315)\ncy.get('#option315').should('be.visible').select('Brown $5.00 (983 In Stock)'); // Replace 'Some Option' with the actual option text\n// Click on the \"Call to Order\" link\ncy.xpath(\"//a[@class='call_to_order']\").should('be.visible').click();\n// Verify the visibility of the element after clicking \"Call to Order\"\ncy.get('div[class=\"col-md-6 pull-left\"] b').should('be.visible'); // Verifying that the bold text inside is visible",
+              "err": {},
+              "uuid": "e3f624da-0f65-4b34-abd7-e7d846a1716e",
+              "parentUUID": "3694f87a-de75-4a75-9048-a7edcdae2cd8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should search for \"Books\", verify the specific image and product title visibility",
+              "fullTitle": "Search Functionality and Product Details Verification should search for \"Books\", verify the specific image and product title visibility",
+              "timedOut": null,
+              "duration": 4578,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the Automation Test Store homepage\ncy.visit('https://automationteststore.com/');\n// Search for \"Books\" and verify the search bar is visible\ncy.get('input#filter_keyword').should('be.visible').type('Books') // Search for \"Books\"\n.type('{enter}'); // Press Enter to perform the search\n// Click on the \"Description\" checkbox\ncy.get('input#description').should('be.visible') // Ensure the checkbox is visible\n.click(); // Click on the checkbox\n// Click on the \"Search\" button\ncy.get('button#search_button').should('be.visible') // Ensure the search button is visible\n.click(); // Click the search button\n// Verify that the specific image for \"Books\" is visible\n//cy.get('a.local_image img[style=\"width: 380px; height: 380px;\"][src=\"//automationteststore.com/image/thumbnails/18/76/paperback1_jpg-100198-380x380.jpg\"]')\n//.should('be.visible'); // Check if the image is visible\n// Verify that the product title \"The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life\" is visible\ncy.get('span.bgnone').should('contain.text', 'The Miracle Morning: The Not-So-Obvious Secret Guaranteed to Transform Your Life');",
+              "err": {},
+              "uuid": "4f55500a-b57d-42bf-816f-427762f13076",
+              "parentUUID": "3694f87a-de75-4a75-9048-a7edcdae2cd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e3f624da-0f65-4b34-abd7-e7d846a1716e",
+            "4f55500a-b57d-42bf-816f-427762f13076"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
